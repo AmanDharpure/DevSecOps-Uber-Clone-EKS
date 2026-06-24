@@ -1,0 +1,91 @@
+pipeline{
+    agent any
+    tools{
+        jdk 'jdk21'
+        nodejs 'node16'
+    }
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+    stages {
+        stage('clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Checkout from Git'){
+            steps{
+                git branch: 'main', url: 'https://github.com/AmanDharpure/uber-clone.git'
+            }
+        }
+        stage("Sonarqube Analysis"){
+            steps{
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Uber \
+                    -Dsonar.projectKey=Uber'''
+                }
+            }
+        }
+        stage("quality gate"){
+           steps {
+                script {
+                    waitForQualityGate abortPipeline: true, credentialsId: 'jenkins-sonar-token'
+                }
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        stage('OWASP FS SCAN') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                    dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit --noupdate', odcInstallation: 'DC'
+                    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                }
+            }
+        }
+        stage('TRIVY FS SCAN') {
+            steps {
+                sh "trivy fs . > trivyfs.txt"
+            }
+        }
+        
+        stage('Docker Debug') {
+    steps {
+        sh '''
+        whoami
+        id
+        groups
+        pwd
+        ls -l /var/run/docker.sock
+        docker ps
+        '''
+    }
+}
+        stage("Docker Build & Push"){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'docker'){
+                       sh "docker build -t uber ."
+                       sh "docker tag uber amand3456/uber:latest"
+                       sh "docker push amand3456/uber:latest"
+                    }
+                }
+            }
+        }
+        stage("TRIVY Image Scan"){
+            steps{
+                sh "trivy image amand3456/uber:latest > trivyimage.txt"
+            }
+        }
+        stage("Deploy Docker"){
+            steps{
+                sh "docker stop uber 2>/dev/null || true"
+                sh "docker rm uber 2>/dev/null || true"
+                sh "docker run -d --name uber -p 3000:3000 amand3456/uber:latest"
+            }
+        }
+    }
+}
