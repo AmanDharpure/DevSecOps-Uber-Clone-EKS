@@ -14,7 +14,8 @@ The application is containerized using Docker, analyzed with SonarQube, scanned 
 
 # 🏗️ Architecture
 
-> Add your AWS Architecture Diagram here.
+<img width="1536" height="1024" alt="ChatGPT Image Jun 25, 2026, 12_22_43 PM" src="https://github.com/user-attachments/assets/945527c4-5aee-46aa-85d0-b99e16d26537" />
+
 
 Example:
 
