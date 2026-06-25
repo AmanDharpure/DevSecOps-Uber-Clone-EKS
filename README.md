@@ -201,22 +201,6 @@ Running Uber Application
 
 
 <img width="1895" height="893" alt="Screenshot 2026-06-25 003832" src="https://github.com/user-attachments/assets/37972718-011d-442a-8729-f994fb5eeea4" />
-
-
-SonarQube Dashboard
-
-
-
-* AWS Architecture
-* Jenkins Pipeline
-* SonarQube Dashboard
-* OWASP Report
-* Trivy Scan
-* DockerHub Repository
-* Amazon EKS Cluster
-* Kubernetes Pods
-* Running Application
-
 ---
 
 # 💡 Challenges Faced
