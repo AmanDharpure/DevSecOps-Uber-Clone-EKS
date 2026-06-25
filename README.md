@@ -169,29 +169,39 @@ EC2 Instance
 
 <img width="1852" height="917" alt="Screenshot 2026-06-24 215139" src="https://github.com/user-attachments/assets/a4098163-406d-4d91-bc37-f4abbada4843" />
 
+
 Jenkins CI/CD Pipeline
 
 <img width="1895" height="905" alt="Screenshot 2026-06-24 214337" src="https://github.com/user-attachments/assets/29913daa-c0f6-483e-bc43-45a8b4460a44" />
 
+
 <img width="1915" height="912" alt="Screenshot 2026-06-24 220244" src="https://github.com/user-attachments/assets/090e9100-63f4-4e94-8c15-9b891505a6b9" />
+
 
 SonarQube Dashboard
 
 <img width="1916" height="911" alt="Screenshot 2026-06-25 002324" src="https://github.com/user-attachments/assets/3d6f5205-fb8e-47d6-9c45-ad68f0da8660" />
 
+
 Amazon EKS Cluster
 
 <img width="1917" height="907" alt="Screenshot 2026-06-25 002617" src="https://github.com/user-attachments/assets/30e6bd23-7318-4975-9037-f370fc3dacba" />
 
+
 <img width="1893" height="983" alt="Screenshot 2026-06-25 002738" src="https://github.com/user-attachments/assets/9a2b4afc-0c37-400b-a37a-745279862a63" />
+
 
 Kubernetes Pods
 
+
 <img width="1895" height="987" alt="Screenshot 2026-06-25 002756" src="https://github.com/user-attachments/assets/40c1ca55-6474-481e-9739-fca00c413628" />
+
 
 Running Uber Application
 
+
 <img width="1895" height="893" alt="Screenshot 2026-06-25 003832" src="https://github.com/user-attachments/assets/37972718-011d-442a-8729-f994fb5eeea4" />
+
 
 SonarQube Dashboard
 
