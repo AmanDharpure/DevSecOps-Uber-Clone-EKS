@@ -253,10 +253,8 @@ Include screenshots of:
 
 **Aman Dharpure**
 
-MCA Student | AWS & DevOps Enthusiast
-
 * GitHub: https://github.com/AmanDharpure
-* LinkedIn: *(Add your LinkedIn profile URL here)*
+  
 
 ---
 
