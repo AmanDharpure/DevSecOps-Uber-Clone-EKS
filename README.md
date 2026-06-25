@@ -1,34 +1,265 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚖 DevSecOps Uber Clone on AWS EKS
 
-## Getting Started
+An end-to-end **DevSecOps CI/CD Pipeline** project that demonstrates how to build, secure, containerize, and deploy a modern web application on **Amazon EKS (Elastic Kubernetes Service)** using industry-standard DevOps and DevSecOps tools.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
+# 📌 Project Overview
+
+This project automates the complete software delivery lifecycle—from code commit to production deployment—while integrating security checks at every stage of the CI/CD pipeline.
+
+The application is containerized using Docker, analyzed with SonarQube, scanned for vulnerabilities using OWASP Dependency Check and Trivy, pushed to DockerHub, and deployed to Amazon EKS using Kubernetes.
+
+---
+
+# 🏗️ Architecture
+
+> Add your AWS Architecture Diagram here.
+
+Example:
+
+```
+Developer
+    │
+    ▼
+ GitHub Repository
+    │
+    ▼
+ Jenkins CI/CD Pipeline
+    │
+    ├── Source Code Checkout
+    ├── SonarQube Analysis
+    ├── OWASP Dependency Check
+    ├── Trivy Filesystem Scan
+    ├── Docker Build
+    ├── Docker Image Scan
+    ├── Push Image to DockerHub
+    ▼
+ Amazon EKS Cluster
+    │
+    ▼
+ Kubernetes Deployment
+    │
+    ▼
+ AWS LoadBalancer
+    │
+    ▼
+ End Users
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# 🚀 Tech Stack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Cloud
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* AWS EC2
+* AWS IAM
+* Amazon EKS
+* AWS Load Balancer
 
-## Learn More
+### DevOps
 
-To learn more about Next.js, take a look at the following resources:
+* Jenkins
+* Docker
+* DockerHub
+* Git
+* GitHub
+* Kubernetes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### DevSecOps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* SonarQube
+* Trivy
+* OWASP Dependency Check
 
-## Deploy on Vercel
+### Infrastructure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Terraform
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Application
+
+* Next.js
+* React.js
+
+---
+
+# 📂 Project Structure
+
+```
+.
+├── components/
+├── pages/
+├── public/
+├── styles/
+├── EKS_TERRAFORM/
+├── K8S/
+├── Dockerfile
+├── uber-deployment.yaml
+├── uber-service.yaml
+├── package.json
+├── README.md
+└── ...
+```
+
+---
+
+# 🔄 CI/CD Pipeline
+
+The Jenkins pipeline performs the following stages:
+
+1. Source Code Checkout
+2. SonarQube Static Code Analysis
+3. Quality Gate Validation
+4. Install Dependencies
+5. OWASP Dependency Check
+6. Trivy File System Scan
+7. Docker Image Build
+8. Trivy Docker Image Scan
+9. Push Docker Image to DockerHub
+10. Deploy Application to Amazon EKS
+
+---
+
+# 🔐 Security Scanning
+
+### SonarQube
+
+* Static Code Analysis
+* Quality Gate Validation
+
+### OWASP Dependency Check
+
+* Dependency Vulnerability Analysis
+
+### Trivy
+
+* Filesystem Scan
+* Docker Image Scan
+
+---
+
+# 🐳 Docker
+
+Build Docker Image
+
+```bash
+docker build -t uber .
+```
+
+Run Container
+
+```bash
+docker run -d -p 3000:3000 uber
+```
+
+---
+
+# ☸️ Kubernetes Deployment
+
+Create Deployment
+
+```bash
+kubectl apply -f uber-deployment.yaml
+```
+
+Create Service
+
+```bash
+kubectl apply -f uber-service.yaml
+```
+
+Verify Resources
+
+```bash
+kubectl get pods
+kubectl get svc
+kubectl get deployments
+```
+
+---
+
+# ☁️ Deploy to Amazon EKS
+
+Update kubeconfig
+
+```bash
+aws eks update-kubeconfig --region ap-south-1 --name uber-eks
+```
+
+Deploy
+
+```bash
+kubectl apply -f uber-deployment.yaml
+kubectl apply -f uber-service.yaml
+```
+
+---
+
+# 📸 Screenshots
+
+Include screenshots of:
+
+* AWS Architecture
+* Jenkins Pipeline
+* SonarQube Dashboard
+* OWASP Report
+* Trivy Scan
+* DockerHub Repository
+* Amazon EKS Cluster
+* Kubernetes Pods
+* Running Application
+
+---
+
+# 💡 Challenges Faced
+
+* Docker permission issues in Jenkins
+* SonarQube webhook and Quality Gate configuration
+* GitHub Push Protection and secret removal
+* IAM role and AWS CLI authentication
+* Amazon EKS cluster and node group setup
+* Kubernetes deployment and LoadBalancer configuration
+* DockerHub integration
+* CI/CD pipeline debugging
+
+---
+
+# 📚 Key Learnings
+
+* Building production-ready CI/CD pipelines
+* DevSecOps best practices
+* Containerization using Docker
+* Kubernetes orchestration
+* Deploying applications on Amazon EKS
+* AWS IAM and networking
+* Infrastructure automation with Terraform
+* Security scanning integration
+
+---
+
+# 🎯 Project Outcome
+
+* ✅ Built a complete DevSecOps CI/CD pipeline
+* ✅ Integrated automated code quality and security scanning
+* ✅ Containerized the application using Docker
+* ✅ Successfully deployed the application on Amazon EKS
+* ✅ Implemented Kubernetes Deployment and LoadBalancer
+* ✅ Automated image delivery using DockerHub
+
+---
+
+# 👨‍💻 Author
+
+**Aman Dharpure**
+
+MCA Student | AWS & DevOps Enthusiast
+
+* GitHub: https://github.com/AmanDharpure
+* LinkedIn: *(Add your LinkedIn profile URL here)*
+
+---
+
+## ⭐ If you found this project useful, consider giving this repository a Star!
+
+
