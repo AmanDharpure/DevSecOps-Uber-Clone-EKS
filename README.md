@@ -4,7 +4,7 @@ An end-to-end **DevSecOps CI/CD Pipeline** project that demonstrates how to buil
 
 ---
 
-# 📌 Project Overview
+#  Project Overview
 
 This project automates the complete software delivery lifecycle—from code commit to production deployment—while integrating security checks at every stage of the CI/CD pipeline.
 
@@ -12,11 +12,11 @@ The application is containerized using Docker, analyzed with SonarQube, scanned 
 
 ---
 
-# 🏗️ Architecture
+#  Architecture
 
 <img width="1536" height="1024" alt="ChatGPT Image Jun 25, 2026, 12_22_43 PM" src="https://github.com/user-attachments/assets/945527c4-5aee-46aa-85d0-b99e16d26537" />
 
-# 🚀 Tech Stack
+#  Tech Stack
 
 ### Cloud
 
@@ -51,7 +51,7 @@ The application is containerized using Docker, analyzed with SonarQube, scanned 
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```
 .
@@ -71,7 +71,7 @@ The application is containerized using Docker, analyzed with SonarQube, scanned 
 
 ---
 
-# 🔄 CI/CD Pipeline
+#  CI/CD Pipeline
 
 The Jenkins pipeline performs the following stages:
 
@@ -88,7 +88,7 @@ The Jenkins pipeline performs the following stages:
 
 ---
 
-# 🔐 Security Scanning
+#  Security Scanning
 
 ### SonarQube
 
@@ -106,7 +106,7 @@ The Jenkins pipeline performs the following stages:
 
 ---
 
-# 🐳 Docker
+#  Docker
 
 Build Docker Image
 
@@ -122,7 +122,7 @@ docker run -d -p 3000:3000 uber
 
 ---
 
-# ☸️ Kubernetes Deployment
+#  Kubernetes Deployment
 
 Create Deployment
 
@@ -146,7 +146,7 @@ kubectl get deployments
 
 ---
 
-# ☁️ Deploy to Amazon EKS
+#  Deploy to Amazon EKS
 
 Update kubeconfig
 
@@ -163,7 +163,7 @@ kubectl apply -f uber-service.yaml
 
 ---
 
-# 📸 Screenshots
+#  Screenshots
 
 EC2 Instance
 
@@ -203,7 +203,7 @@ Running Uber Application
 <img width="1895" height="893" alt="Screenshot 2026-06-25 003832" src="https://github.com/user-attachments/assets/37972718-011d-442a-8729-f994fb5eeea4" />
 ---
 
-# 💡 Challenges Faced
+#  Challenges Faced
 
 * Docker permission issues in Jenkins
 * SonarQube webhook and Quality Gate configuration
@@ -216,7 +216,7 @@ Running Uber Application
 
 ---
 
-# 📚 Key Learnings
+#  Key Learnings
 
 * Building production-ready CI/CD pipelines
 * DevSecOps best practices
@@ -229,7 +229,7 @@ Running Uber Application
 
 ---
 
-# 🎯 Project Outcome
+#  Project Outcome
 
 * ✅ Built a complete DevSecOps CI/CD pipeline
 * ✅ Integrated automated code quality and security scanning
@@ -240,7 +240,7 @@ Running Uber Application
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 **Aman Dharpure**
 
