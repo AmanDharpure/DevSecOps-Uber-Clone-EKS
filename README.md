@@ -1,4 +1,4 @@
-# 🚖 DevSecOps Uber Clone on AWS EKS
+#  DevSecOps Uber Clone on AWS EKS
 
 An end-to-end **DevSecOps CI/CD Pipeline** project that demonstrates how to build, secure, containerize, and deploy a modern web application on **Amazon EKS (Elastic Kubernetes Service)** using industry-standard DevOps and DevSecOps tools.
 
